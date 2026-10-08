@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit Note</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-zinc-900 text-white min-h-screen p-10 font-sans flex items-center justify-center">
+    <div class="w-full max-w-md bg-zinc-800 p-8 rounded-lg shadow-2xl border border-zinc-700">
+        <a href="/" class="text-blue-400 hover:underline text-sm font-semibold mb-6 inline-block">⬅ Back to Home</a>
+        
+        <h1 class="text-2xl font-bold mb-6">Rename Note</h1>
+        
+        <form action="/edit" method="POST" class="flex flex-col gap-4">
+            <input type="hidden" name="previousName" value="<%= filename %>">
+            
+            <label class="text-gray-400 text-sm">New File Name</label>
+            <input type="text" name="newName" placeholder="Enter new name" required 
+                   class="px-4 py-2 bg-zinc-700 rounded-md outline-none focus:ring-2 focus:ring-yellow-500 text-white">
+                   
+            <button type="submit" class="bg-yellow-500 hover:bg-yellow-400 text-zinc-900 font-bold py-2 rounded-md transition mt-2">
+                Update Name
+            </button>
+        </form>
+    </div>
+</body>
+</html>
